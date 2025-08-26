@@ -3,21 +3,33 @@
 //Define a class LibraryItem to represent shared properties 
 //title, id, isAvailable) and methods (e.g., checkOut() and 
 //returnItem()). 
-class LibraryItem {
-    constructor(title, id) {
-        this.title = title;
-        this.id = id;
-        
-}
-checkOut() {
-    this.isAvailable = false;
-    console.log(`You have checked out ${this.title}`);
-}
+class LibraryItem { 
+  constructor(title, id) { 
+    this.title = title; 
+    this.id = id; 
+    this.isAvailable = true; 
+  } 
+ 
+  checkOut() { 
+    if (this.isAvailable) { 
+      this.isAvailable = false; 
+      console.log(`${this.title} has been checked out.`); 
+    } else { 
+      console.log(`${this.title} is already checked out.`); 
+    } 
+  }
+  
 
-returnItem() {
-    this.isAvailable = true;
-    console.log(`You have returned ${this.title}`);
-}
+ returnItem() { 
+    if (!this.isAvailable) { 
+      this.isAvailable = true; 
+      console.log(`${this.title} has been returned.`); 
+    } else { 
+      console.log(`${this.title} was not checked out.`); 
+1 
+ 
+    } 
+  } 
 }
 //2: Extend the Base Class 
 //○ 
